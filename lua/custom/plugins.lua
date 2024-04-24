@@ -1,4 +1,13 @@
 local plugins = {
+  -- Autoforamtting
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    event = "VeryLazy",-- We do not want this package to impact start up time
+    opts = function()
+      return require "custom.configs.null-ls"
+    end,
+  },
+
   -- Offical LSP (Language Server Protocol)
   --   necessary for autocompletion
   {
