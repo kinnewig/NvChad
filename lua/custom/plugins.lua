@@ -8,10 +8,28 @@ local plugins = {
     end,
   },
 
+  -- coq
+  --   autocompletion tool
+  {
+    "ms-jpq/coq_nvim",
+    dependencies = {
+      "ms-jpq/coq.artifacts",
+    },
+  },
+
   -- Offical LSP (Language Server Protocol)
   --   necessary for autocompletion
   {
     "neovim/nvim-lspconfig",
+
+    opts = {
+      servers = {
+        clangd = {
+          mason = false,
+        }
+      }
+    },
+
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
@@ -23,7 +41,7 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-
+        "clangd"
       }
     }
   }
