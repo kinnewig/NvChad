@@ -1,7 +1,7 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = { theme = 'jellybeans' }
+M.ui = { theme = 'github_dark' }
 
 M.plugins = "custom.plugins"
 
