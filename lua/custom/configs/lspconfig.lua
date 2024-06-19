@@ -5,6 +5,7 @@ local capabilities = base.capabilities
 local lspconfig = require("lspconfig")
 local coq = require "coq"
 
+-- C++
 lspconfig.clangd.setup({
   coq.lsp_ensure_capabilities({
     cmd = {
@@ -19,3 +20,6 @@ lspconfig.clangd.setup({
     capabilities = capabilities
   })
 })
+
+-- LaTeX
+lspconfig.texlab.setup{}

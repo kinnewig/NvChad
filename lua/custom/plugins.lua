@@ -75,8 +75,13 @@ local plugins = {
       servers = {
         clangd = {
           mason = false,
-        }
-      }
+        },
+        texlab = {
+          setup_args = {
+            mason = true,
+          },
+        },
+      },
     },
 
     config = function()
@@ -92,7 +97,8 @@ local plugins = {
       ensure_installed = {
         "clangd",
         "clang-format",
-        "codelldb"
+        "codelldb",
+        "texlab",
       }
     }
   }
